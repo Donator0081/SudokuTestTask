@@ -9,7 +9,6 @@ public class BoardSolution {
     private static final Set<Character> validNumbers = new HashSet<>();
     private static final int BOARD_SIZE = 9;
     private static final int SUBSECTION_SIZE = 3;
-    private static final char NO_VALUE = '.';
     private static final int BOARD_START_INDEX = 0;
 
     static {
@@ -78,10 +77,11 @@ public class BoardSolution {
     }
 
     private boolean containsValidCharacters(char value, boolean[] constraint) {
-        if (!validNumbers.contains(value) && value != NO_VALUE) {
+        char noValue = '.';
+        if (!validNumbers.contains(value) && value != noValue) {
             throw new WrongCharException("Wrong character exception");
         }
-        if (value != NO_VALUE) {
+        if (value != noValue) {
             int intValue = Character.getNumericValue(value);
             if (!constraint[intValue - 1]) {
                 constraint[intValue - 1] = true;
