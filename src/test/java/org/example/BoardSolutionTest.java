@@ -34,5 +34,10 @@ class BoardSolutionTest {
         assertThrows(WrongCharException.class, () -> boardSolution.isValid(BoardSolutionTestUtil.INVALID_BOARD_INCORRECT_CHARACTER));
     }
 
+    @Test
+    void isValid_invalidBoardIncorrectDigit_shouldReturnFalse() {
+        assertThrows(WrongDigitException.class, () -> boardSolution.isValid(BoardSolutionTestUtil.INVALID_BOARD_INCORRECT_DIGIT));
+    }
+
 
 }
